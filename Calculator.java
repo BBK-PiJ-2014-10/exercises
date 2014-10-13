@@ -11,15 +11,19 @@ public class Calculator {
             case 1:
                 operation = "addition";
                 result = input1 + input2;
+                break;
             case 2:
                 operation = "subtraction";
                 result = input1 - input2;
+                break;
             case 3:
                 operation = "multiplication";
                 result = input1 * input2;
+                break;
             case 4:
                 operation = "division";
                 result = input1 / input2;
+                break;
         }
         resultString = "Result of " + operation + " between " + input1 + " and " + input2 + " is: " + result;
         return resultString;
