@@ -7,27 +7,29 @@ public class PointerPersonQueue implements PersonQueue {
      * The head of the stack: the visible node
      */
     private PointerPersonNode head;
+    private PointerPersonNode first;
+    private PointerPersonNode last;
 
     public PointerPersonQueue() {
-      first = null;
-      last = null;
+      this.first = null;
+      this.last = null;
     }
 
     public void insert(String name) {
       PointerPersonNode newPerson = new PointerPersonNode(name);
-      if (last == null) {
-        first = newPerson;
+      if (this.last == null) {
+        this.first = newPerson;
       } else {
-        last.setBefore(newPerson);
+        this.last.setBefore(newPerson);
       }
-      last = newPerson;
+      this.last = newPerson;
     }
 
     public String retrieve() {
-      if (first == null) {
+      if (this.first == null) {
         return null;
       }
-      first = first.getBefore();
-      String result = first.getName();
+      this.first = this.first.getBefore();
+      String result = this.first.getName();
       return result;
     }
